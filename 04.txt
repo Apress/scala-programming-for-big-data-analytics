@@ -1,0 +1,25 @@
+val sumResult = 10+5
+
+# example of using variables in Python:
+sumResult = 10+5
+sumResult = 9+100 
+
+# another example of using variables in Python:
+myName = "Irfan"
+myName = "Irfan" + "Elahi"
+
+val country = "Pakistan"
+country = "Australia"
+
+val temperature = 10
+val country = "Australia"
+
+var temperature = 98
+temperature = 100
+temperature = "hot"
+
+val country:String = "Australia"
+var temperature:Int = 10
+var isCustomer:Boolean = true
+
+val 10years = 1

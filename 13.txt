@@ -1,0 +1,49 @@
+name := "HelloWorld"
+
+version := "1.0"
+
+scalaVersion := "2.12.0"
+
+
+import spray.json._
+
+
+// https://mvnrepository.com/artifact/io.spray/spray-json
+libraryDependencies += "io.spray" %% "spray-json" % "1.3.4"
+
+println("hello world")
+
+object HelloWorld {
+	def main(args:Array[String]):Unit = {
+		println("hello world")
+	}
+}
+
+
+object HelloWorld extends App{
+	println("hello world")
+}
+
+package com.irfan.elahi
+
+object HelloWorld extends App{
+	println("hello world")
+}
+
+
+
+package com.irfan.elahi
+
+object GreetWorld {
+	def printMessage(theMessage:String):Unit = {
+		println(s"${theMessage} from Irfan Elahi")
+	}
+}
+
+
+package com.irfan.elahi
+import com.irfan.elahi.GreetWorld
+
+object HelloWorld extends App {
+	GreetWorld.printMessage("Hello Awesome World")
+}

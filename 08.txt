@@ -1,0 +1,49 @@
+def getSquareRoot(givenNumber:Int):Double = {
+   println(s"Finding square root   of $givenNumber")
+   math.sqrt(givenNumber)
+} 
+
+getSquareRoot(25)
+
+val squareOf25 = squareThis(25)
+
+def getSquareRoot(givenParam:Int)= {
+    println(s"finding square root of $givenParam")
+    math.sqrt(givenParam)
+}
+
+def greetEmployee(name:String, company:String) = {
+   println(s"Hi $name. Welcome to $company")
+}
+
+
+greetEmployee("Irfan","Facebook")
+
+greetEmployee(name="Irfan",company="Deloitte")
+greetEmployee(company="Deloitte",name="Irfan")
+
+def greetEmployee(name:String="Irfan", company:String) = {
+   println(s"Hi $name. Welcome to $company")
+}
+
+greetEmployee(company="Deloitte")
+greetEmployee(name="John Doe",company="Deloitte")
+
+def printDate = java.time.LocalDate.now.toString
+printDate
+
+def convertToUpper(name:String):String = name.toUpperCase
+
+def convertToLower(name:String):String = name.toLowerCase
+
+def changeCase(givenName:String,caseConverter:(String)=>String) = caseConverter(givenName)
+
+changeCase("irfan",convertToUpper)
+changeCase("IRFAN",convertToLower)
+
+(name:String)=>name.ToUpperCase 
+(name:String)=>name.ToLowerCase
+
+val convertToUpperAnon=(name:String)=>name.toUpperCase
+convertToUpperAnon("irfan")
+changeCase("irfan",(x:String)=>x.toUpperCase)

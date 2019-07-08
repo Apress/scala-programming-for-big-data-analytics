@@ -1,0 +1,131 @@
+val myIntegerList = List(1,2,10,30)
+val myStringList = List("New York", "Melbourne", "Islamabad", "Istanbul")
+
+val mixList = List(1,"New York","Melbourne",2,"Islamabad")
+myIntegerList(0)
+myIntegerList(2)
+myStringList(0)
+myStringList(3)
+
+case class Person (name:String, age:Int, employer:String, isMarried:Boolean)
+val listOfPersons = List(Person("irfan",30,"Deloitte",true), Person("Tony Stark",45,"Avengers", false), Person("Neo",34,"Matrix",true))
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+
+case class Person (name:String, age:Int, employer:String, isMarried:Boolean)
+val listOfPersons = List(Person("irfan",30,"Deloitte",true), Person("Tony Stark",45,"Avengers",false), Person("Elon Musk",34, "Tesla", true))
+
+listOfPersons
+
+myIntegerList.length
+
+myStringList.mkString(";")
+
+myIntegerList.length
+
+def squareThis(givenParam:Int):Double = math.pow(givenParam,2)`
+val numberList = List(1,3,5,7,9)
+numberList.map(x=>squareThis(x))
+
+numberList.map(squareThis)
+val stringList = List("Australia","USA","UK","Malaysia","Singapore")
+stringList.map(x=>x.length)
+
+numberList.foreach(x=>squareThis(x))
+numberList.foreach(x=>println(s"My id is $x"))
+def isEven(givenParam:Int):Boolean = givenParam%2 == 0
+
+val numberList=(1 to 10).toList //this is yet another method you can quickly create a list. This will create a list consisting of numbers from 1 to 10.  
+
+numberList.filter(x=>isEven(x))
+
+val list=(1 to 10).toList
+list.reduce((x,y)=>x+y)
+list.reduce(_+_)
+
+val aList = "a" :: "b" :: "c" :: Nil
+
+val aSet = Set(1,10,121)
+val aSet = Set(1,10,121,10)
+
+val duplicateList = List(1,10,121,10)
+duplicateList.toSet
+
+aSet
+aSet(1)
+aSet(10)
+aSet(20)
+
+
+val contactsMap = Map("thor"->918101,"captain america"->1281281,"hulk"->91921921)
+
+contactsMap(0)
+contactsMap("Thor")
+contactsMap.getOrElse("iron man","not found")
+val contactsMap = Map("thor"->918101,"captain america"->1281281,"hulk"->91921921,"thor"->99021)
+contactsMap("thor")
+
+val contactsMap = Map(("thor",918101),("captain america",1281281),("hulk",91921921),("thor",99021))
+
+contactsMap.keys
+contactsMap.values
+contactsMap.contains("thor")
+contactsMap.contains("black panther")
+contactsMap("hulk") = 81729191
+
+contactsMap.map{case(x,y)=>x.toUpperCase -> y}
+
+val aTuple = (1,"customer1","australia","prepaid",true)
+aTuple._1
+aTuple._2
+aTuple.productIterator.toList.foreach(println)
+aTuple.productArity
+
+val twoElementTuple=Tuple2("irfan","elahi")
+
+import scala.collection.mutable.ListBuffer
+
+val aMutableList = ListBuffer(1,10,91,121)
+aMutableList += 500
+aMutableList
+aMutableList(0) = -91
+aMutableList -=500
+aMutableList -= 10
+
+val secondMutableList = ListBuffer(818181, 912121)
+aMutableList = secondMutableList
+
+
+//first you import the mutable library into your name-space. It’s suggested to not import import scala.collection.mutable.Map as it will be vague as to whether you want to use mutable or immutable map in your program. 
+
+import scala.collection.mutable
+
+
+// creating a mutable map is similar to immutable one:
+
+val mutableMap = mutable.Map("CEO" -> "John Doe", "CTO" -> "Tony Stark", "Team Lead" -> "Dwayne Johnson")
+
+//if you want to update a key-value pair i.e. specifically a value against a key:
+
+mutableMap("CEO") = "John Cena"
+
+//if you want to add a new key-value pair in your mutable map:
+mutableMap += "Developer" -> "Nate Silver"
+
+
+val nestedList = List(
+    List("Australia","Pakistan","Malaysia"), 
+    List("Asia","Africa","Antarctica","Australia","Europe","North America","South America"),
+    List("Microsoft","Apple","Facebook","Twitter","Cisco","Netflix","Uber")
+    )
+
+nestedList(0)
+val firstElement = nestedList(0)
+firstElement(0)
+nestedList(0)(0)
+
+val nestedListOfTuples = List((1,"irfan","irfanelahi.com"),(2,"nate silver","fivethirtyeight.com/"),(3,"Mark Zuckerberg","facebook.com"))
+
+nestedListOfTuples.foreach(x=>println(s"owner name is: ${x._2}"))

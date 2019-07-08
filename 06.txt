@@ -1,0 +1,91 @@
+10 > 100
+10 >= 100
+"irfan" != "Irfan"
+100 < 1000
+100 <= 1000
+
+
+:paste
+val carBudget = 40
+if (carBudget < 30) 
+println("buy Mazda")
+else println("buy BMW")
+
+val carBudget = 40
+if (carBudget < 30) {
+    println("buy Mazda")
+}
+else {
+    println("buy BMW")
+}
+
+
+val carBudget = 40
+if (carBudget < 30)
+println("so your budget is lesser than 30")
+println("buy Mazda")
+else print("buy BMW")
+
+
+val carBudget = 40
+if (carBudget < 30) {
+    println("so your budget is lesser than 30")
+    println("buy Mazda")
+}
+else { 
+    print("buy BMW")
+}
+
+
+
+val country="Australia"
+val carBudget = 25
+if (carBudget < 30) {
+    println("sSo your budget is lesser than 30")
+    if (country == "Australia") {
+        println("Buy Mazda")
+    } else {
+        println("Buy Toyota")
+    }
+}
+else { 
+    print("buy BMW")
+}
+
+
+
+
+val carBudget = 70
+if (carBudget < 30) {
+    println("Buy Toyota")
+}
+else if (carBudget > 30 & carBudget < 50) {
+    print("Buy Mazda")
+} else if (carBudget > 50) {
+    print("Buy BMW")
+}
+
+
+val salary = 95000
+val highlyPaid = if (salary>100000) true else false
+
+scala> :paste
+// Entering paste mode (ctrl-D to finish)
+
+val country = "Australia"
+country match {
+case "Australia" => "Continent"
+case _ => "Not Continent"
+}
+
+
+scala> :paste
+// Entering paste mode (ctrl-D to finish)
+
+val salary = 95000
+salary match {
+case x if x>100000 => true
+case y if y<100000 => false
+}
+
+    

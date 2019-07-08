@@ -1,0 +1,88 @@
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+class Television(val brand:String,val screenSize:Int,val screenStatus:Boolean) {
+    def turnOn=println("Turning on")
+    def turnOff=println("Turning off")
+}
+
+val samsungOled = new Television("Samsung",42,false)
+samsungOled.brand
+samsungOled.screenSize
+
+samsungOled.turnOn
+samsungOled.turnOff
+
+samsungOled.screenSize=48
+
+val lgPlasma=new Television("LG",32,true)
+lgPlasma.brand
+lgPlasma.screenSize
+lgPlasma.screenSize=42
+lgPlasma.screenSize
+
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+object DatabaseUtils{
+  val databaseName:String = "sample_db"
+  val tableName:String = "sample_table"
+
+  def establishConnection = println(s"Establishing connection to ${databaseName}")
+  def closeConnection = println(s"Closing connection to ${databaseName}")
+}
+
+DatabaseUtils.databaseName
+DatabaseUtils.establishConnection
+
+case class EmployeeCaseClass(val designation:String, val company:String)
+
+class Employee(val designation:String, val company:String)
+val e1=new Employee("engineer","facebook")
+val e2=new Employee("engineer","facebook")
+e1.equals(e2)
+
+case class EmployeeCaseClass(val designation:String, val company:String)
+val ec1=EmployeeCaseClass("engineer","facebook")
+val ec2=EmployeeCaseClass("engineer","facebook")
+ec1.equals(ec2)
+
+e1.toString
+ec1.toString
+
+val employees = List("engineer,facebook","manager,facebook","associate,facebook")
+case class EmployeeData  (designation:String, company:String)
+
+val employeeList =  employees.map(x=>x.split(",")).map(x=>EmployeeData(x(0),x(1)))
+
+employeeList(0)
+
+employeeList(0).designation
+
+employeeList.map(x=>x.designation)
+
+val fileData=Source.fromFile("C:\\path_to\\sample_file.txt")
+
+val fileData = scala.io.Source.fromFile("C:\\path_to\\sample_file.txtvalid path to a file  ")
+
+import scala.io.Source
+
+
+val fileData=Source.fromFile("valid path to a file")
+
+import scala.io.Source._
+
+val fileData = fromFile("valid path to a file")
+
+import scala.io.{Source,StdIn}
+
+import java.sql.Array
+
+import java.sql.Array
+
+val numberArray = Array(1,10,-100)
+
+import java.sql.{Array=>SqlArray}
+
+val numberArray = Array(1,10,-100)

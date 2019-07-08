@@ -1,0 +1,70 @@
+val query = "Select * from table where id = 1"
+
+val greeting = "my name is \"Irfan Elahi \" and I am from Pakistan"
+
+greeting(0)
+
+val funkyString = """ this is a
+multi-line string and in this string,
+there can be
+"quotes" as well with
+no problems"""
+
+val a="1"
+val b="2"
+a+b
+
+val name="irfan"
+val introduction = "my name is $name"
+val introduction = s"my name is $name"
+val introduction = "my name is ${name}"
+val introduction = s"my name is $name.toUpperCase"
+val introduction = "my name is ${name.toUpperCase}"
+
+val sharePrice = 100.4
+s"the share price is $sharePrice"
+s"the share price is $sharePrice%.2f"
+f"the share price is $sharePrice%.2f"
+
+val aString="Irfan \n Elahi"
+val aString=raw"Irfan \n Elahi"
+
+val customerPackage = "prepaid"
+customerPackage.length
+customerPackage.size
+customerPackage(100)
+
+val aRow = "1,mark zuckerberg,facebook"
+aRow.split(",")
+aRow.split(",")(0)
+aRow.split(",")(1)
+aRow.split(",")(2)
+
+val x = "apache spark"
+x.substring(0)
+x.substring(1)
+x.substring(1,4)
+
+val x = "apache spark"
+x.indexOf("a")
+x.indexOf("p")
+x.indexOf("k")
+
+val printOutput = println("Hello Scala")  
+val sqrtResult = math.sqrt(24)
+
+var aGlobalVariable = 10
+def impureFunction() = {aGlobalVariable = aGlobalVariable*2}
+
+var aList = List(1,"irfan")
+var integerList = List(1,20,-100)
+
+var anyVariable:Any = 10
+anyVariable = "irfan"
+
+sqrtResult.getClass
+
+scala.io.StdIn.readLine
+val userInput = scala.io.StdIn.readLine
+userInput/10
+userInput.toInt/10

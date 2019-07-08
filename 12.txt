@@ -1,0 +1,91 @@
+val aList = (1 to 20).toList
+aList(22)
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+try{
+  aList(22)
+} catch {
+  case _: Throwable => "exception"
+}
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+try{
+  aList(22)
+} catch {
+  case x: IndexOutOfBoundsException => "index out of bounds exception"
+  case _: Throwable => "exception"
+}
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+try{
+  aList(22)
+} catch {
+  case x: IndexOutOfBoundsException => throw new IndexOutOfBoundsException
+  case _: Throwable => "exception"
+}
+
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+try{
+  aList(22)
+} catch {
+  case x: IndexOutOfBoundsException =>
+    println("Printing error stack trace for better trouble-shooting")
+    x.printStackTrace()
+  case _: Throwable => "exception"
+}
+
+val inputIndex = scala.io.StdIn.readLine().toInt
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+val theElement = try{
+  aList(19inputIndex  )
+} catch {
+  case x: IndexOutOfBoundsException =>
+    println("Printing error stack trace for better trouble-shooting")
+    x.printStackTrace()
+  case _: Throwable => "exception"
+}
+
+val inputIndex = scala.io.StdIn.readLine().toInt
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+val theElement:Int = try{
+  aList(19inputIndex)
+} catch {
+  case x: IndexOutOfBoundsException =>
+    println("Printing error stack trace for better trouble-shooting")
+    x.printStackTrace()
+  case _: Throwable => "exception"
+}
+
+
+import java.io.{File, BufferedWriter, FileWriter}
+val fileContent = scala.io.StdIn.readLine()
+val textFile = new File("valid path to a file")
+
+try {
+    val buffWriter = new BufferedWriter(new FileWriter(textFile))
+} catch {
+    case x:java.io.IOException => println("Issues in writing file. Check if you have permissions to write to the location or if a directory with the same name exists")
+                                  throw new java.io.IOException
+} 
+try {
+    buffWriter.write(fileContent)
+} catch {
+    case x:java.io.IOException => println("Writing to the file failed. Check if you have the permissions to write to file")
+                                  throw new java.io.IOException
+} finally {
+    buffWriter.close()
+}

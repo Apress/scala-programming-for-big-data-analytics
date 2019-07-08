@@ -1,0 +1,17 @@
+"hello world"
+
+"Irfan_Pakistan".split("_") 
+
+:paste
+
+:history
+
+val myVariable = 20
+
+val myStringVariable = "Scala"
+
+myStringVariable.
+myStringVariable.length
+myStringVariable.indexOf("c")
+
+:quit

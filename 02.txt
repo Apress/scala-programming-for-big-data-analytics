@@ -1,0 +1,7 @@
+java -version 
+
+sudo su
+apt-get update
+add-apt-repository ppa:webupd8team/java
+apt install oracle-java8-installer
+apt-get install scala

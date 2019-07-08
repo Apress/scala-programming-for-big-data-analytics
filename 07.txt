@@ -1,0 +1,28 @@
+val resultOfBlock = {
+    val a=2
+    val b=2
+    a+b
+}
+
+
+val resultOfBlock = {
+    val a=2
+    val b=2
+    val c=a+b
+}
+
+
+val age = 50
+val isOld = {
+    if (age>50)
+    true
+    else false
+}
+
+val age=50
+    val isOld = {
+        if (age>50)
+        100
+        else "no"
+    }
+

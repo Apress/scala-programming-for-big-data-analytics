@@ -1,0 +1,84 @@
+sc.parallelize(List(1,2,3,4,5,6,7,8,9,10))
+
+val myRdd = sc.parallelize(List(1,2,3,4,5,6,7,8,9,10))
+
+val aList = List(1,2,3,4,5,6,7,8,9,10)
+aList.map(x=>x*2)
+
+myRdd.map(x=>x*2).collect()
+
+def giveEvens(givenNumber:Int):Boolean = {
+  givenNumber%2 == 0
+}
+
+myRdd.filter(x=>giveEvens(x)).collect()
+
+myRdd.filter(x=>giveEvens(x)).map(x=>x*2)
+
+myRdd.filter(x=>giveEvens(x)).map(x=>x*2).collect().foreach(println)
+
+
+val myData = sc.textFile("/FileStore/tables/simple_file.csv")
+
+case class DataSchema(id:Int, name:String, language:String, country:String)
+
+myData.map(x=>x.split(","))
+
+val myDF = myData.map(x=>x.split(",")).map(x=>DataSchema(x(0).toInt,
+                                             x(1),
+                                              x(2),
+                                              x(3)
+                                             )).toDF
+
+
+myDF.select("id").show()
+
+myDF.filter("language == 'java'").show()
+
+myDF.createOrReplaceTempView("df_temp")
+
+spark.sql("select * from df_temp where country = 'pakistan'").show()
+
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.9")
+
+
+name := "HelloWorldSpark"
+
+version := "1.0"
+
+scalaVersion := "2.11.8"
+
+libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core" % "2.4.1",
+  "org.apache.spark" %% "spark-sql" % "2.4.1"
+)
+
+assemblyJarName in assembly := "hello_spark.jar"
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
+  case x => MergeStrategy.first
+}
+
+
+
+
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+
+object HelloWorldSpark extends App{
+
+  //initialize Apache Spark Context:
+  val conf = new SparkConf()
+  val spark = SparkSession.builder.config(conf).getOrCreate()
+
+  val aList = List(1,2,3,4,5,6,7,8,9,10)
+  val aRdd = spark.sparkContext.parallelize(aList)
+
+  aRdd.filter(x=>x%2==0).map(x=>x*2).collect().foreach(println)
+
+}
+
+
+
+spark2-submit --class HelloWorldSpark --master local hello_spark.jar

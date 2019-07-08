@@ -1,0 +1,40 @@
+val listOfNumbers = List(1,20,300,-12,121)
+
+
+for (i<-listOfNumbers){
+     println(i)
+     }
+
+for (i<-listOfNumbers;if i%2==0){
+     println(i)
+     }
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+var i=0
+while (i<listOfNumbers.length){
+  println(i)
+  i+=1
+}
+
+
+:paste
+// Entering paste mode (ctrl-D to finish)
+
+var passwd=""
+while(passwd != "correctpassword"){
+  passwd=scala.io.StdIn.readLine
+  println("Enter the correct password")
+}
+
+
+import util.control.Breaks._
+scala> :paste
+// Entering paste mode (ctrl-D to finish)
+var i = 0
+while (i<10){
+    if (i==7) break
+    println(i)
+    i+=1
+}
